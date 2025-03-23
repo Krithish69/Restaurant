@@ -1,0 +1,430 @@
+.admin-page {
+    min-height: 100vh;
+    width: 100vw; /* Adjust width to fit the screen */
+    height: 100vh; /* Adjust height to fit the screen */
+    background-color: #F5F5DC;
+    /* Cream background */
+    padding: 0;
+    color: #2E4D2E;
+    /* Dark green text */
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: #2E7D32;
+    /* Keep dark green header */
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 96%;
+    top: 0;
+    z-index: 100;
+}
+
+.admin-header h1 {
+    color: #F5F5DC;
+    /* Cream text */
+}
+
+.view-menu-btn {
+    color: #F5F5DC;
+    /* Cream text */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid #F5F5DC;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.view-menu-btn:hover {
+    background-color: #F5F5DC;
+    color: #2E7D32;
+}
+
+.admin-content {
+    background-color: #FFFFF0;
+    /* Ivory white background */
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 96%;
+    margin: 0;
+    min-height: calc(100vh - 100px);
+}
+
+.admin-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #90EE90;
+    /* Light green border */
+    padding-bottom: 1rem;
+}
+
+.nav-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #000000;
+    /* Black text */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Add transition */
+    position: relative;
+}
+
+.nav-btn:hover {
+    color: #0F9E99;
+    /* Teal */
+    background-color: rgba(15, 158, 153, 0.1);
+    /* Light teal background on hover */
+}
+
+.nav-btn.active {
+    color: #0F9E99;
+    /* Teal */
+    font-weight: 600;
+    background-color: rgba(15, 158, 153, 0.2);
+    /* Slightly darker teal for active state */
+}
+
+.nav-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2E7D32;
+}
+
+.table-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.table-card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 300px;
+}
+
+.table-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.table-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.table-card-header h3 {
+    margin: 0;
+    color: #2E4D2E;
+    font-size: 1.25rem;
+}
+
+.table-card-content {
+    margin-bottom: 1rem;
+}
+
+.table-card-content p {
+    margin: 0;
+    color: #2E4D2E;
+}
+
+.table-card-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #FFFFF0;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #90EE90;
+    color: #2E4D2E;
+}
+
+.admin-table th {
+    background-color: #98FB98;
+    /* Pale green */
+    color: #2E4D2E;
+    font-weight: 600;
+}
+
+.admin-table tr:hover {
+    background-color: #F0FFF0;
+    /* Honeydew */
+}
+
+.status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.status-badge.available {
+    background-color: #98FB98;
+    color: #2E4D2E;
+}
+
+.status-badge.occupied {
+    background-color: #FFE4E1;
+    /* Misty rose */
+    color: #2E4D2E;
+}
+
+.status-badge.reserved {
+    background-color: #F5F5DC;
+    /* Cream */
+    color: #2E4D2E;
+}
+
+.menu-image {
+    width: 80px;  /* Set fixed width */
+    height: 80px; /* Set fixed height */
+    object-fit: cover; /* Ensures image fits properly without stretching */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+  }
+  
+.action-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    color: #2E7D32;
+}
+
+.action-btn.view {
+    background-color: #98FB98;
+    color: #2E4D2E;
+}
+
+.action-btn.add {
+    background-color: #A8D8B9;
+    /* Light Green */
+    color: #002D3A;
+    /* Dark Blue */
+    width: 10%;
+}
+
+.action-btn.remove {
+    background-color: #FFB3B3;
+    /* Light Red */
+    color: #002D3A;
+    /* Dark Blue */
+}
+
+.action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.database-section .status-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #F0FFF0;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.status-item label {
+    width: 150px;
+    font-weight: 500;
+    color: #2E4D2E;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #F5F5DC;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #4CAF50;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4CAF50;
+    transition: width 0.3s ease;
+}
+
+.status-item span {
+    width: 50px;
+    text-align: right;
+    color: #2E4D2E;
+    font-weight: 600;
+}
+
+h2 {
+    color: #2E4D2E;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-left: 4px solid #4CAF50;
+    padding-left: 1rem;
+}
+
+.tables-section,
+.menu-section,
+.database-section {
+    background-color: #FFFFF0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .status-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .status-item label {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .status-item span {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    .table-cards {
+        justify-content: center;
+    }
+
+    .table-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.view-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 30px; /* Increased padding for better spacing */
+  z-index: 1000;
+  width: 360px; /* Increased width */
+  max-width: 90%; /* Ensure it fits smaller screens */
+  height: 250px; /* Increased height */
+  max-height: 90%; /* Ensure it fits smaller screens */
+  overflow-y: auto; /* Add scroll for content overflow */
+}
+
+.popup-content h3,
+.popup-content h4 {
+  margin: 15px 0; /* Increased margin for better spacing */
+  font-size: 1.2rem; /* Slightly larger font size */
+}
+
+.popup-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.popup-content ul li {
+  margin: 10px 0; /* Increased margin for better spacing */
+  font-size: 1rem; /* Slightly larger font size */
+}
+
+.close-btn-top {
+  position: absolute;
+  background: none;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn-top:hover {
+  color: #f44336;
+  background: none;
+}
+
+.payment-done-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.payment-done-btn:hover {
+  background: #45a049;
+}
+
+.menu-item {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item h3 {
+    margin: 0 0 0.5rem;
+    color: #2E4D2E;
+}
+
+.menu-item p {
+    margin: 0.25rem 0;
+    color: #2E4D2E;
+}
+
+.menu-item .action-btn {
+    margin-top: 0.5rem;
+}
+

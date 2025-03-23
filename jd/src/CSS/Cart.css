@@ -1,0 +1,272 @@
+/* Cart.css */
+/* Base styles */
+.cart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cart-modal.show {
+  opacity: 1;
+}
+
+.cart-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #4CAF50;
+  width: 30px;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+.empty-cart-message {
+  text-align: center;
+  color: #888;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cart-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-details h6 {
+  color: #4CAF50;
+  margin: 0 0 5px 0;
+  font-size: 1.1em;
+}
+
+.cart-item-details p {
+  margin: 0;
+  color: #666;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  width: 100%-90px;
+  gap: 10px; /* Add gap between quantity controls and remove button */
+}
+
+.quantity-buttons {
+  position: relative;
+}
+
+.quantity-buttons button {
+  background: #50a06d;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  max-width: 30px;
+}
+
+.quantity-buttons span {
+  margin: 0 10px;
+  position: absolute;
+  left: 33%;
+  bottom: 10%;
+  color: #228225;
+}
+
+.remove-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #228225;
+  width: 50px;
+  position: relative ;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  color: #000;
+}
+
+.summary-details {
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary-row.total {
+  font-weight: bold;
+}
+
+.pay-button {
+  width: 100%-50px;
+  padding: 10px;
+  background: #249530;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.notes-section {
+  margin-top: 10px;
+}
+
+.notes-section a {
+  text-decoration: none;
+  color: #3498db;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.note-input-container {
+  margin-top: 5px;
+  display: flex;
+}
+
+.note-input-container input[type="text"] {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.note-input-container button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.notes-list {
+  margin-top: 5px;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-bottom: 3px;
+}
+
+.note-item p {
+  margin: 0;
+  font-size: 0.85em;
+}
+
+.note-item button {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.note-item button:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .cart-content {
+    width: 95%;
+    max-width: 500px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .quantity-controls {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .quantity-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .remove-button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-content {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .cart-item-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .quantity-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quantity-buttons button {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .quantity-buttons span {
+    margin: 5px 0;
+  }
+}
